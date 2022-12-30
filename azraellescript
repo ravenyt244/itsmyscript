@@ -1,0 +1,35 @@
+getgenv().AuthKey="HUGE_c8pyKRAB4m8k7EPR"
+getgenv().LoadSettings={
+    UseSeperateSaves=false,
+    DisableStartupPrompt=true,
+    DisableGamepassCheck=false,
+}
+loadstring(game:HttpGet("https://hugegames.io/script"))()
+
+-- ANTI AFK
+local GC = getconnections or get_signal_cons
+	if GC then
+		for i,v in pairs(GC(game.Players.LocalPlayer.Idled)) do
+			if v["Disable"] then
+				v["Disable"](v)
+			elseif v["Disconnect"] then
+				v["Disconnect"](v)
+			end
+		end
+	else
+		require(game:GetService("ReplicatedStorage").Framework.Modules.Client["5 | Message"]).New("ANTI AFK IS TRASH")
+		local vu = game:GetService("VirtualUser")
+		game:GetService("Players").LocalPlayer.Idled:connect(function()
+			vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+			wait(1)
+			vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		end)
+	end
+	warn("ANTI AFK!")
+	warn("AZRA HUB HAS BEEN LOADED!")
+
+    -- Server Hopper
+warn"Server Hop in 15 mins"
+    wait(900)
+local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
+module:Teleport(game.PlaceId)
