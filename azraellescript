@@ -27,9 +27,3 @@ local GC = getconnections or get_signal_cons
 	end
 	warn("ANTI AFK!")
 	warn("AZRA HUB HAS BEEN LOADED!")
-
-    -- Server Hopper
-warn"Server Hop in 15 mins"
-    wait(900)
-local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
-module:Teleport(game.PlaceId)
